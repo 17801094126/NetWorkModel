@@ -35,7 +35,7 @@ public class Manager {
         MediaType MEDIA_TYPE_JSON= MediaType.parse("application/json; charset=utf-8");
         RequestBody requestBody=RequestBody.create(new Gson().toJson(requestBean),MEDIA_TYPE_JSON);
         Request request = new Request.Builder()
-                .url("http:// 192.168.1.116:19610/sdkValid/checkAuthority")
+                .url("http://192.168.1.116:19610/sdkValid/checkAuthority")
                 .post(requestBody)
                 .build();
         client.newCall(request).enqueue(new Callback() {
