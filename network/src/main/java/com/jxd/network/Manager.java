@@ -21,6 +21,7 @@ import okhttp3.Response;
 
 public class Manager {
 
+    private static Handler handler=new Handler();
     //正面
     public static void startOcrType(String institutionCode, String password,
                                     int type, String className,
@@ -49,7 +50,7 @@ public class Manager {
                 try {
                     final String  string = response.body().string();
                     Log.e("QQQQQ",string);
-                    new Handler().postDelayed(new Runnable() {
+                    handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             ocrCallback.onSuccess(string);
